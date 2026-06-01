@@ -147,10 +147,10 @@ export default function ProjectsSection() {
       }
 
       // Arrow buttons pop in
-      const arrowElements = [
-        desktopPrevRef.current,
-        desktopNextRef.current
-      ].filter(Boolean);
+      const isMobile = window.innerWidth < 768;
+      const arrowElements = isMobile
+        ? []
+        : [desktopPrevRef.current, desktopNextRef.current].filter(Boolean);
       
       if (arrowElements.length > 0) {
         tl.from(arrowElements, {
@@ -204,7 +204,7 @@ export default function ProjectsSection() {
             ref={desktopPrevRef}
             color="white"
             speed="3s"
-            className="nav-arrow hidden md:flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
+            className="nav-arrow !hidden md:!flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
             innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
           >
             <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
@@ -222,7 +222,7 @@ export default function ProjectsSection() {
                 return (
                   <div
                     key={p.id}
-                    className="project-card flex-[0_0_95%] sm:flex-[0_0_460px] min-w-0 px-2 sm:px-5 flex flex-col"
+                    className="project-card flex-[0_0_100%] sm:flex-[0_0_460px] min-w-0 px-4 sm:px-5 flex flex-col"
                   >
                     <div
                       className={`rounded-[20px] border border-primary/20 bg-transparent overflow-hidden transition-all duration-500 ease-out mx-auto w-full sm:max-w-full flex-1 flex flex-col justify-between
@@ -315,7 +315,7 @@ export default function ProjectsSection() {
             ref={desktopNextRef}
             color="white"
             speed="3s"
-            className="nav-arrow hidden md:flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
+            className="nav-arrow !hidden md:!flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
             innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
           >
             <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
