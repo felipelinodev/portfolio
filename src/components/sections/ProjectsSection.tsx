@@ -149,8 +149,7 @@ export default function ProjectsSection() {
       // Arrow buttons pop in
       const arrowElements = [
         desktopPrevRef.current,
-        desktopNextRef.current,
-        mobileArrowsRef.current
+        desktopNextRef.current
       ].filter(Boolean);
       
       if (arrowElements.length > 0) {
@@ -187,10 +186,10 @@ export default function ProjectsSection() {
       ref={sectionRef}
       className="py-24 relative overflow-hidden w-full"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-0 sm:px-6">
         <h2
           ref={titleRef}
-          className="text-3xl md:text-4xl font-mono text-primary text-center mb-16"
+          className="text-3xl md:text-4xl font-mono text-primary text-center mb-16 px-6 sm:px-0"
         >
           {t.projects.title}
         </h2>
@@ -223,7 +222,7 @@ export default function ProjectsSection() {
                 return (
                   <div
                     key={p.id}
-                    className="project-card flex-[0_0_100%] sm:flex-[0_0_460px] min-w-0 px-2 sm:px-5"
+                    className="project-card flex-[0_0_92%] sm:flex-[0_0_460px] min-w-0 px-2 sm:px-5"
                   >
                     <div
                       className={`rounded-[20px] border border-primary/20 bg-transparent overflow-hidden transition-all duration-500 ease-out mx-auto w-full sm:max-w-full
@@ -316,35 +315,6 @@ export default function ProjectsSection() {
             speed="3s"
             className="nav-arrow hidden md:flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
             innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
-          >
-            <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
-              <ChevronRight className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
-            </span>
-          </StarBorder>
-        </div>
-
-        {/* Mobile Navigation Arrows */}
-        <div ref={mobileArrowsRef} className="flex md:hidden items-center justify-center gap-6 mt-4 z-30 relative">
-          <StarBorder
-            as="button"
-            onClick={scrollPrev}
-            color="white"
-            speed="3s"
-            className="nav-arrow flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
-            innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[50px] !w-[50px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
-          >
-            <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
-              <ChevronLeft className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
-            </span>
-          </StarBorder>
-
-          <StarBorder
-            as="button"
-            onClick={scrollNext}
-            color="white"
-            speed="3s"
-            className="nav-arrow flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
-            innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[50px] !w-[50px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
           >
             <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
               <ChevronRight className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
