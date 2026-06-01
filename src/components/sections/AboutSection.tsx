@@ -132,7 +132,7 @@ export default function AboutSection() {
           {/* Photo */}
           <div
             ref={photoRef}
-            className="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0 rounded-[20px] overflow-hidden border border-white/10 bg-white/5 shadow-lg"
+            className="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0 rounded-[20px] overflow-hidden border border-foreground/10 bg-foreground/5 shadow-lg"
           >
             {/* Standard img tag used here to guarantee maximum original resolution and prevent Next.js image blur */}
             <img
@@ -154,7 +154,7 @@ export default function AboutSection() {
         {/* Justified content text */}
         <div
           ref={textRef}
-          className="space-y-6 text-white-muted/95 text-[15px] sm:text-[16px] leading-relaxed text-left sm:text-justify mb-12"
+          className="space-y-6 text-foreground/80 text-[15px] sm:text-[16px] leading-relaxed text-left sm:text-justify mb-12"
         >
           <p>
             {t.about.p1}
@@ -185,7 +185,7 @@ export default function AboutSection() {
             return (
               <div
                 key={tech.name}
-                className="tech-chip flex items-center gap-2.5 px-4 py-1 rounded-full bg-primary/11 hover:bg-white/[0.06] hover:border-primary/30 transition-colors duration-300 text-white-muted text-sm cursor-default"
+                className="tech-chip flex items-center gap-2.5 px-4 py-1 rounded-full bg-primary/11 hover:bg-foreground/[0.06] hover:border-primary/30 transition-colors duration-300 text-foreground/80 text-sm cursor-default"
               >
                 <Icon className="w-4 h-4 text-primary" />
                 <span>{tech.name}</span>

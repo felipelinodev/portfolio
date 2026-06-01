@@ -196,7 +196,7 @@ export default function ProjectsSection() {
             color="white"
             speed="3s"
             className="group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20 absolute left-0 md:static"
-            innerClassName="!bg-primary relative overflow-hidden before:absolute before:inset-0 before:bg-muted before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
+            innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
           >
             <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
               <ChevronLeft className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
@@ -236,7 +236,7 @@ export default function ProjectsSection() {
                           </div>
                         ) : (
                           <>
-                            <div className="text-white/20 font-mono text-sm tracking-widest">
+                            <div className="text-foreground/20 font-mono text-sm tracking-widest">
                               {p.title} {t.projects.preview}
                             </div>
                             <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-card to-transparent" />
@@ -256,10 +256,10 @@ export default function ProjectsSection() {
                             </span>
                           ))}
                         </div>
-                        <h3 className="text-[18px] sm:text-[20px] font-semibold text-white/90 mb-2">
+                        <h3 className="text-[18px] sm:text-[20px] font-semibold text-foreground/90 mb-2">
                           {p.title}
                         </h3>
-                        <p className="text-[13px] sm:text-[14px] text-white/50 mb-6 leading-relaxed line-clamp-2">
+                        <p className="text-[13px] sm:text-[14px] text-foreground/50 mb-6 leading-relaxed line-clamp-2">
                           {p.description}
                         </p>
 
@@ -270,7 +270,7 @@ export default function ProjectsSection() {
                             color="white"
                             speed="3s"
                             className="group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 inline-block shrink-0"
-                            innerClassName="!bg-primary relative overflow-hidden before:absolute before:inset-0 before:bg-muted before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
+                            innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
                           >
                             <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
                               <SiGithub className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
@@ -283,7 +283,7 @@ export default function ProjectsSection() {
                             color="white"
                             speed="3s"
                             className="flex-1 group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 inline-block"
-                            innerClassName="!bg-primary relative overflow-hidden before:absolute before:inset-0 before:bg-muted before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !text-[#0B0B0C] !px-8 !rounded-xl !flex !items-center !justify-center font-semibold text-sm"
+                            innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !text-[#0B0B0C] !px-8 !rounded-xl !flex !items-center !justify-center font-semibold text-sm"
                           >
                             <span className="relative z-10 flex items-center gap-2 font-mono text-[13px] font-semibold text-primary-foreground group-hover:text-white transition-colors duration-500">
                               {t.projects.deploy}
@@ -305,7 +305,7 @@ export default function ProjectsSection() {
             color="white"
             speed="3s"
             className="group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20 absolute right-0 md:static"
-            innerClassName="!bg-primary relative overflow-hidden before:absolute before:inset-0 before:bg-muted before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
+            innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
           >
             <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
               <ChevronRight className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />

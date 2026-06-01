@@ -259,7 +259,7 @@ return (
     <div className="max-w-4xl w-full mx-auto px-6 relative z-10">
       <div
         ref={windowRef}
-        className="rounded-[12px] border border-white/10 bg-[#0B0B0C] shadow-2xl overflow-hidden sm:min-h-[400px] relative will-change-transform"
+        className="rounded-[12px] border border-foreground/10 bg-[#0B0B0C] shadow-2xl overflow-hidden sm:min-h-[400px] relative will-change-transform"
         style={{ boxShadow: "0 0 80px 0 rgba(var(--color-primary-rgb, 255 200 100) / 0.08)" }}
       >
         {/* Scan line overlay */}

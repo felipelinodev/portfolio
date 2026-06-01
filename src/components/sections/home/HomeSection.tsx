@@ -136,7 +136,7 @@ export default function HomeSection() {
     <section
       id="home"
       ref={sectionRef}
-      className="min-h-screen flex items-center pt-24 px-6 sm:px-12 w-full border-b border-white/10 pb-12 sm:pb-0"
+      className="min-h-screen flex items-center pt-24 px-6 sm:px-12 w-full border-b border-foreground/10 pb-12 sm:pb-0"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
 
@@ -157,7 +157,7 @@ export default function HomeSection() {
               skill={t.hero.skills.frontend}
               porcent="50%"
               className="absolute top-[45%] -left-2 sm:-left-8 md:-left-4"
-              circleClassName="border-t-white/80 border-r-white/80"
+              circleClassName="border-t-foreground/80 border-r-foreground/80"
             />
 
             <SkillStack
@@ -202,11 +202,12 @@ export default function HomeSection() {
           <div className="flex items-center gap-2 mb-16">
             <StarBorder
               as="a"
-              href="/cv.pdf"
+              href="/Curriculum%20(DEV).pdf"
+              download="Felipe_Lino_CV.pdf"
               color="#C7D1D5"
               speed="3s"
               className="group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 inline-block"
-              innerClassName="!bg-primary relative overflow-hidden before:absolute before:inset-0 before:bg-muted before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !flex !items-center !h-[54.7px] !text-[#0B0B0C] !px-8 !py-3 !rounded-xl !font-medium"
+              innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !flex !items-center !h-[54.7px] !text-[#0B0B0C] !px-8 !py-3 !rounded-xl !font-medium"
             >
               <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-500">
                 <span className="font-mono text-[14px] sm:text-[15px] font-semibold text-primary-foreground">
@@ -221,7 +222,7 @@ export default function HomeSection() {
               color="white"
               speed="3s"
               className="group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 inline-block"
-              innerClassName="!bg-primary relative overflow-hidden before:absolute before:inset-0 before:bg-muted before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !p-3 !rounded-xl !flex !items-center !justify-center"
+              innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !p-3 !rounded-xl !flex !items-center !justify-center"
             >
               <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
                 <ArrowUpRight className="w-6 h-6 group-hover:rotate-[360deg] transition-transform duration-700" />
@@ -232,17 +233,17 @@ export default function HomeSection() {
 
           <div
             ref={iconsRef}
-            className="flex flex-wrap justify-center lg:justify-end items-center gap-6 text-white/60"
+            className="flex flex-wrap justify-center lg:justify-end items-center gap-6 text-foreground/60"
           >
-            <div><SiTypescript className="w-8 h-8 hover:text-white hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
-            <div><SiNextdotjs className="w-8 h-8 hover:text-white hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
-            <div><SiJavascript className="w-8 h-8 hover:text-white hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
-            <div><SiReact className="w-8 h-8 hover:text-white hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
-            <div><SiTailwindcss className="w-8 h-8 hover:text-white hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
-            <div><SiGit className="w-8 h-8 hover:text-white hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
-            <div><SiPostgresql className="w-8 h-8 hover:text-white hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
-            <div><SiMongodb className="w-8 h-8 hover:text-white hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
-            <div><SiPython className="w-8 h-8 hover:text-white hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
+            <div><SiTypescript className="w-8 h-8 hover:text-foreground hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
+            <div><SiNextdotjs className="w-8 h-8 hover:text-foreground hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
+            <div><SiJavascript className="w-8 h-8 hover:text-foreground hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
+            <div><SiReact className="w-8 h-8 hover:text-foreground hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
+            <div><SiTailwindcss className="w-8 h-8 hover:text-foreground hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
+            <div><SiGit className="w-8 h-8 hover:text-foreground hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
+            <div><SiPostgresql className="w-8 h-8 hover:text-foreground hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
+            <div><SiMongodb className="w-8 h-8 hover:text-foreground hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
+            <div><SiPython className="w-8 h-8 hover:text-foreground hover:rotate-[360deg] transition-all duration-700 cursor-pointer" /></div>
           </div>
         </div>
       </div>

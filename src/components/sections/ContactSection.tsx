@@ -85,7 +85,7 @@ export default function ContactSection() {
       <section
         id="contact"
         ref={sectionRef}
-        className="py-20 w-full bg-[#0B0B0C]"
+        className="py-20 w-full bg-background"
       >
         <div className="max-w-4xl mx-auto px-6">
           {/* Section title */}
@@ -101,19 +101,19 @@ export default function ContactSection() {
             {/* LEFT: Contact info card */}
             <div
               ref={leftCardRef}
-              className="rounded-[14px] border border-white/[0.08] bg-transparent overflow-hidden flex flex-col"
+              className="rounded-[14px] border border-foreground/[0.08] bg-transparent overflow-hidden flex flex-col"
             >
               {/* Email row */}
-              <div className="flex items-center gap-3 px-6 py-5 flex-1 text-white/70 font-mono text-sm overflow-hidden">
+              <div className="flex items-center gap-3 px-6 py-5 flex-1 text-foreground/70 font-mono text-sm overflow-hidden">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 <span className="whitespace-nowrap overflow-hidden text-ellipsis">felipelinodesigndoe@gmail.com</span>
               </div>
 
               {/* Divider */}
-              <div className="h-px bg-white/[0.06]" />
+              <div className="h-px bg-foreground/[0.06]" />
 
               {/* Phone row */}
-              <div className="flex items-center gap-3 px-6 py-5 flex-1 text-white/70 font-mono text-sm overflow-hidden">
+              <div className="flex items-center gap-3 px-6 py-5 flex-1 text-foreground/70 font-mono text-sm overflow-hidden">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
                 <span className="whitespace-nowrap">38 9 9734-4783</span>
               </div>
@@ -122,9 +122,9 @@ export default function ContactSection() {
             {/* RIGHT: CTA card */}
             <div
               ref={rightCardRef}
-              className="rounded-[14px] border border-white/[0.08] bg-transparent flex flex-col items-center justify-center gap-5 px-6 py-8"
+              className="rounded-[14px] border border-foreground/[0.08] bg-transparent flex flex-col items-center justify-center gap-5 px-6 py-8"
             >
-              <p className="font-mono text-sm text-white/70 text-center">
+              <p className="font-mono text-sm text-foreground/70 text-center">
                 {t.contact.getInTouch}
               </p>
               <StarBorder
@@ -135,7 +135,7 @@ export default function ContactSection() {
                 color="#C7D1D5"
                 speed="3s"
                 className="group w-full [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 inline-block"
-                innerClassName="!bg-primary relative overflow-hidden before:absolute before:inset-0 before:bg-muted before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !text-[#0B0B0C] !px-6 !rounded-xl !flex !items-center !justify-between font-mono text-sm font-semibold w-full"
+                innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !text-[#0B0B0C] !px-6 !rounded-xl !flex !items-center !justify-between font-mono text-sm font-semibold w-full"
               >
                 <span className="relative z-10 flex-1 text-center group-hover:text-white transition-colors duration-500">{t.contact.sendMessage}</span>
                 <span className="relative z-10 shrink-0 flex items-center justify-center group-hover:text-white transition-colors duration-500">
@@ -148,15 +148,15 @@ export default function ContactSection() {
           {/* Social card — full width below */}
           <div
             ref={socialCardRef}
-            className="rounded-[14px] border border-white/[0.08] bg-transparent flex items-center gap-5 px-6 py-5"
+            className="rounded-[14px] border border-foreground/[0.08] bg-transparent flex items-center gap-5 px-6 py-5"
           >
-            <span className="font-mono text-sm text-white/50">{t.contact.followMe}</span>
+            <span className="font-mono text-sm text-foreground/50">{t.contact.followMe}</span>
             <a
               href="https://github.com/felipelinodev"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="group text-white/50 hover:text-primary transition-colors"
+              className="group text-foreground/50 hover:text-primary transition-colors"
             >
               <SiGithub className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
             </a>
@@ -165,7 +165,7 @@ export default function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="group text-white/50 hover:text-primary transition-colors"
+              className="group text-foreground/50 hover:text-primary transition-colors"
             >
               <svg className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -178,17 +178,17 @@ export default function ContactSection() {
       </section>
 
       {/* Footer */}
-      <footer className="w-full bg-primary/2 px-6 py-10">
+      <footer className="w-full bg-foreground/[0.02] px-6 py-10">
         <div className="max-w-4xl mx-auto flex items-end justify-between">
           {/* Left: code-comment signature */}
-          <div className="font-mono text-white/25 text-sm leading-snug">
+          <div className="font-mono text-foreground/25 text-sm leading-snug">
             <span>{`{/* felipe`}</span>
             <br />
             <span>{`lino */}`}</span>
           </div>
 
           {/* Right: copyright */}
-          <p className="font-mono text-white/25 text-xs text-right">
+          <p className="font-mono text-foreground/25 text-xs text-right">
             {t.contact.copyright}
           </p>
         </div>
