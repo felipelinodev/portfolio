@@ -1,0 +1,24 @@
+{
+  "tailwindCSS.experimental.configFile": "./src/app/globals.css",
+  "editor.quickSuggestions": {
+    "other": "off",
+    "comments": "off",
+    "strings": "on"
+  },
+  "editor.inlineSuggest.enabled": false,
+  "editor.suggestOnTriggerCharacters": true,
+  "cSpell.enabled": false,
+  "editor.links": false,
+  "tailwindCSS.lint.cssConflict": "ignore",
+  "tailwindCSS.lint.recommendedVariantOrder": "ignore",
+  "tailwindCSS.lint.invalidApply": "ignore",
+  "tailwindCSS.lint.invalidScreenTracking": "ignore",
+  "tailwindCSS.lint.invalidVariant": "ignore",
+  "tailwindCSS.lint.invalidConfigPath": "ignore",
+  "tailwindCSS.lint.invalidTailwindDirective": "ignore",
+  "css.validate": false,
+  "html.validate.styles": false,
+  "html.validate.scripts": false,
+  "css.lint.unknownAtRules": "ignore",
+  "scss.validate": false,
+}
