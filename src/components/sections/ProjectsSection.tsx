@@ -17,8 +17,6 @@ export default function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const carouselContainerRef = useRef<HTMLDivElement>(null);
-  const prevBtnRef = useRef<HTMLButtonElement>(null);
-  const nextBtnRef = useRef<HTMLButtonElement>(null);
 
   const projects = [
     {
@@ -146,13 +144,16 @@ export default function ProjectsSection() {
       }
 
       // Arrow buttons pop in
-      tl.from([prevBtnRef.current, nextBtnRef.current], {
-        opacity: 0,
-        scale: 0,
-        stagger: 0.1,
-        duration: 0.5,
-        ease: "back.out(2)",
-      }, 0.55);
+      const arrowBtns = gsap.utils.toArray(".nav-arrow");
+      if (arrowBtns.length > 0) {
+        tl.from(arrowBtns, {
+          opacity: 0,
+          scale: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          ease: "back.out(2)",
+        }, 0.55);
+      }
 
       ScrollTrigger.refresh();
     }, sectionRef);
@@ -192,10 +193,9 @@ export default function ProjectsSection() {
           <StarBorder
             as="button"
             onClick={scrollPrev}
-            ref={prevBtnRef}
             color="white"
             speed="3s"
-            className="group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20 absolute left-0 md:static"
+            className="nav-arrow hidden md:flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
             innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
           >
             <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
@@ -301,11 +301,39 @@ export default function ProjectsSection() {
           <StarBorder
             as="button"
             onClick={scrollNext}
-            ref={nextBtnRef}
             color="white"
             speed="3s"
-            className="group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20 absolute right-0 md:static"
+            className="nav-arrow hidden md:flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
             innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
+          >
+            <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
+              <ChevronRight className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
+            </span>
+          </StarBorder>
+        </div>
+
+        {/* Mobile Navigation Arrows */}
+        <div className="flex md:hidden items-center justify-center gap-6 mt-8">
+          <StarBorder
+            as="button"
+            onClick={scrollPrev}
+            color="white"
+            speed="3s"
+            className="nav-arrow flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
+            innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[50px] !w-[50px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
+          >
+            <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
+              <ChevronLeft className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
+            </span>
+          </StarBorder>
+
+          <StarBorder
+            as="button"
+            onClick={scrollNext}
+            color="white"
+            speed="3s"
+            className="nav-arrow flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
+            innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[50px] !w-[50px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
           >
             <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
               <ChevronRight className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
