@@ -2,7 +2,6 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import useEmblaCarousel from "embla-carousel-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -17,9 +16,6 @@ export default function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const carouselContainerRef = useRef<HTMLDivElement>(null);
-  const desktopPrevRef = useRef<HTMLButtonElement>(null);
-  const desktopNextRef = useRef<HTMLButtonElement>(null);
-  const mobileArrowsRef = useRef<HTMLDivElement>(null);
 
   const projects = [
     {
@@ -145,24 +141,6 @@ export default function ProjectsSection() {
           ease: "back.out(1.5)",
         }, 0.3);
       }
-
-      // Arrow buttons pop in
-      const isMobile = window.innerWidth < 768;
-      const arrowElements = isMobile
-        ? []
-        : [desktopPrevRef.current, desktopNextRef.current].filter(Boolean);
-      
-      if (arrowElements.length > 0) {
-        tl.from(arrowElements, {
-          opacity: 0,
-          scale: 0.9,
-          y: 10,
-          stagger: 0.1,
-          duration: 0.5,
-          ease: "back.out(2)",
-        }, 0.55);
-      }
-
       ScrollTrigger.refresh();
     }, sectionRef);
 
@@ -196,24 +174,10 @@ export default function ProjectsSection() {
 
         <div
           ref={carouselContainerRef}
-          className="flex items-center justify-center gap-4 sm:gap-8 w-full relative"
+          className="w-full relative"
         >
-          <StarBorder
-            as="button"
-            onClick={scrollPrev}
-            ref={desktopPrevRef}
-            color="white"
-            speed="3s"
-            className="nav-arrow !hidden md:!flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
-            innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
-          >
-            <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
-              <ChevronLeft className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
-            </span>
-          </StarBorder>
-
           <div
-            className="overflow-hidden w-full max-w-[1380px] cursor-grab active:cursor-grabbing"
+            className="overflow-hidden w-full max-w-[1380px] mx-auto cursor-grab active:cursor-grabbing"
             ref={emblaRef}
           >
             <div className="flex touch-pan-y items-stretch h-full py-8">
@@ -222,7 +186,7 @@ export default function ProjectsSection() {
                 return (
                   <div
                     key={p.id}
-                    className="project-card flex-[0_0_100%] sm:flex-[0_0_460px] min-w-0 px-4 sm:px-5 flex flex-col"
+                    className="project-card flex-[0_0_100%] sm:flex-[0_0_520px] min-w-0 px-4 sm:px-5 flex flex-col"
                   >
                     <div
                       className={`rounded-[20px] border border-primary/20 bg-transparent overflow-hidden transition-all duration-500 ease-out mx-auto w-full sm:max-w-full flex-1 flex flex-col justify-between
@@ -308,20 +272,6 @@ export default function ProjectsSection() {
               })}
             </div>
           </div>
-
-          <StarBorder
-            as="button"
-            onClick={scrollNext}
-            ref={desktopNextRef}
-            color="white"
-            speed="3s"
-            className="nav-arrow !hidden md:!flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
-            innerClassName="!bg-[#7CB5CE] relative overflow-hidden before:absolute before:inset-0 before:bg-[#5a9ab5] before:-translate-y-full group-hover:before:translate-y-0 before:transition-transform before:duration-500 before:ease-out !h-[54.7px] !w-[54.7px] !text-[#0B0B0C] !rounded-xl !flex !items-center !justify-center"
-          >
-            <span className="relative z-10 flex items-center justify-center w-full h-full group-hover:text-white transition-colors duration-500">
-              <ChevronRight className="w-5 h-5 group-hover:rotate-[360deg] transition-transform duration-700" />
-            </span>
-          </StarBorder>
         </div>
       </div>
     </section>
