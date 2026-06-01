@@ -1,6 +1,6 @@
 import React from 'react';
 
-type StarBorderProps<T extends React.ElementType> = React.ComponentPropsWithoutRef<T> & {
+type StarBorderProps<T extends React.ElementType> = React.ComponentPropsWithRef<T> & {
   as?: T;
   className?: string;
   innerClassName?: string;
@@ -18,12 +18,14 @@ const StarBorder = <T extends React.ElementType = 'button'>({
   speed = '6s',
   thickness = 1,
   children,
+  ref,
   ...rest
 }: StarBorderProps<T>) => {
   const Component = as || 'button';
 
   return (
     <Component
+      ref={ref}
       className={`relative inline-block overflow-hidden rounded-[20px] ${className}`}
       {...(rest as any)}
     >
