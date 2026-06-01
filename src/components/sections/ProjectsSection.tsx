@@ -17,6 +17,9 @@ export default function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const carouselContainerRef = useRef<HTMLDivElement>(null);
+  const desktopPrevRef = useRef<HTMLButtonElement>(null);
+  const desktopNextRef = useRef<HTMLButtonElement>(null);
+  const mobileArrowsRef = useRef<HTMLDivElement>(null);
 
   const projects = [
     {
@@ -144,11 +147,17 @@ export default function ProjectsSection() {
       }
 
       // Arrow buttons pop in
-      const arrowBtns = gsap.utils.toArray(".nav-arrow");
-      if (arrowBtns.length > 0) {
-        tl.from(arrowBtns, {
+      const arrowElements = [
+        desktopPrevRef.current,
+        desktopNextRef.current,
+        mobileArrowsRef.current
+      ].filter(Boolean);
+      
+      if (arrowElements.length > 0) {
+        tl.from(arrowElements, {
           opacity: 0,
-          scale: 0,
+          scale: 0.9,
+          y: 10,
           stagger: 0.1,
           duration: 0.5,
           ease: "back.out(2)",
@@ -178,7 +187,7 @@ export default function ProjectsSection() {
       ref={sectionRef}
       className="py-24 relative overflow-hidden w-full"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <h2
           ref={titleRef}
           className="text-3xl md:text-4xl font-mono text-primary text-center mb-16"
@@ -193,6 +202,7 @@ export default function ProjectsSection() {
           <StarBorder
             as="button"
             onClick={scrollPrev}
+            ref={desktopPrevRef}
             color="white"
             speed="3s"
             className="nav-arrow hidden md:flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
@@ -213,10 +223,10 @@ export default function ProjectsSection() {
                 return (
                   <div
                     key={p.id}
-                    className="project-card flex-[0_0_100%] sm:flex-[0_0_460px] min-w-0 px-4 sm:px-5"
+                    className="project-card flex-[0_0_100%] sm:flex-[0_0_460px] min-w-0 px-2 sm:px-5"
                   >
                     <div
-                      className={`rounded-[20px] border border-primary/20 bg-transparent overflow-hidden transition-all duration-500 ease-out mx-auto w-full max-w-[340px] sm:max-w-full
+                      className={`rounded-[20px] border border-primary/20 bg-transparent overflow-hidden transition-all duration-500 ease-out mx-auto w-full sm:max-w-full
                       ${isCenter
                           ? 'scale-105 opacity-100 z-10 shadow-2xl border-primary/50'
                           : 'scale-95 opacity-70'
@@ -301,6 +311,7 @@ export default function ProjectsSection() {
           <StarBorder
             as="button"
             onClick={scrollNext}
+            ref={desktopNextRef}
             color="white"
             speed="3s"
             className="nav-arrow hidden md:flex group [&>div.absolute]:opacity-0 hover:[&>div.absolute]:opacity-100 [&>div.absolute]:transition-opacity [&>div.absolute]:duration-500 !rounded-xl transition-transform hover:scale-105 shrink-0 z-20"
@@ -313,7 +324,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Mobile Navigation Arrows */}
-        <div className="flex md:hidden items-center justify-center gap-6 mt-8">
+        <div ref={mobileArrowsRef} className="flex md:hidden items-center justify-center gap-6 mt-4 z-30 relative">
           <StarBorder
             as="button"
             onClick={scrollPrev}
