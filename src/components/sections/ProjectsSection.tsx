@@ -216,25 +216,25 @@ export default function ProjectsSection() {
             className="overflow-hidden w-full max-w-[1380px] cursor-grab active:cursor-grabbing"
             ref={emblaRef}
           >
-            <div className="flex touch-pan-y items-center h-full py-8">
+            <div className="flex touch-pan-y items-stretch h-full py-8">
               {projects.map((p, idx) => {
                 const isCenter = idx === selectedIndex;
                 return (
                   <div
                     key={p.id}
-                    className="project-card flex-[0_0_92%] sm:flex-[0_0_460px] min-w-0 px-2 sm:px-5"
+                    className="project-card flex-[0_0_95%] sm:flex-[0_0_460px] min-w-0 px-2 sm:px-5 flex flex-col"
                   >
                     <div
-                      className={`rounded-[20px] border border-primary/20 bg-transparent overflow-hidden transition-all duration-500 ease-out mx-auto w-full sm:max-w-full
+                      className={`rounded-[20px] border border-primary/20 bg-transparent overflow-hidden transition-all duration-500 ease-out mx-auto w-full sm:max-w-full flex-1 flex flex-col justify-between
                       ${isCenter
-                          ? 'scale-105 opacity-100 z-10 shadow-2xl border-primary/50'
-                          : 'scale-95 opacity-70'
+                          ? 'md:scale-105 opacity-100 z-10 shadow-2xl border-primary/50'
+                          : 'md:scale-95 md:opacity-70 opacity-100'
                         }`}
                     >
                       {/* Mock Image Area */}
                       <div className={`w-full h-[180px] sm:h-[220px] flex flex-col items-center justify-center relative p-[8px] ${p.imageUrl ? "bg-transparent" : "bg-gradient-to-br from-orange-500/10 to-orange-900/10"
                         }`}>
-                        {p.imageUrl ? (
+                      {p.imageUrl ? (
                           <div className="relative w-full h-full rounded-[14px] overflow-hidden">
                             <Image
                               src={p.imageUrl}
@@ -254,23 +254,25 @@ export default function ProjectsSection() {
                       </div>
 
                       {/* Card Content */}
-                      <div className="p-5 sm:p-6">
-                        <div className="flex flex-wrap gap-2 mb-5">
-                          {p.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[10px] sm:text-[11px] font-semibold "
-                            >
-                              {tag}
-                            </span>
-                          ))}
+                      <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                          <div className="flex flex-wrap gap-2 mb-5">
+                            {p.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[10px] sm:text-[11px] font-semibold "
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          <h3 className="text-[18px] sm:text-[20px] font-semibold text-foreground/90 mb-2">
+                            {p.title}
+                          </h3>
+                          <p className="text-[13px] sm:text-[14px] text-foreground/50 mb-6 leading-relaxed line-clamp-2">
+                            {p.description}
+                          </p>
                         </div>
-                        <h3 className="text-[18px] sm:text-[20px] font-semibold text-foreground/90 mb-2">
-                          {p.title}
-                        </h3>
-                        <p className="text-[13px] sm:text-[14px] text-foreground/50 mb-6 leading-relaxed line-clamp-2">
-                          {p.description}
-                        </p>
 
                         <div className="flex gap-3">
                           <StarBorder
